@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="rootLayout" prefHeight="800.0" prefWidth="1200.0" styleClass="background"
+            stylesheets="@../css/MyCSS.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.RootLayoutController">
+    <center>
+        <ScrollPane prefHeight="768.0" prefWidth="763.0" styleClass="drawingarea" BorderPane.alignment="CENTER">
+            <content>
+                <AnchorPane fx:id="drawingArea" minHeight="0.0" minWidth="0.0" prefHeight="1500.0" prefWidth="1000.0"
+                            styleClass="paintArea" stylesheets="@../css/MyCSS.css">
+                    <effect>
+                        <Blend/>
+                    </effect>
+                </AnchorPane>
+            </content>
+        </ScrollPane>
+    </center>
+    <left>
+        <AnchorPane fx:id="leftArea" blendMode="SRC_ATOP" prefHeight="200.0" prefWidth="200.0" styleClass="shapeclass"
+                    stylesheets="@../css/MyCSS.css" BorderPane.alignment="CENTER">
+            <children>
+                <AnchorPane fx:id="shapeArea" prefHeight="760.0" prefWidth="200.0">
+                    <children>
+                        <Button fx:id="shapeORLine" alignment="CENTER" contentDisplay="CENTER" layoutY="48.0"
+                                mnemonicParsing="false" onAction="#changeShapeORLine" prefHeight="42.0"
+                                prefWidth="200.0" styleClass="shapeorline" stylesheets="@../css/MyCSS.css" text="Shape"
+                                textAlignment="CENTER" textOverrun="CLIP" AnchorPane.leftAnchor="0.0"
+                                AnchorPane.topAnchor="0.0">
+                            <font>
+                                <Font name="System Bold Italic" size="20.0"/>
+                            </font>
+                        </Button>
+                        <VBox fx:id="lineVBox" alignment="TOP_CENTER" prefHeight="700.0" prefWidth="200.0"
+                              spacing="17.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="0.0"
+                              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="48.0">
+                            <children>
+                                <ImageView fx:id="MyLine" fitHeight="98.0" fitWidth="147.0" pickOnBounds="true"
+                                           preserveRatio="true">
+                                    <image>
+                                        <Image url="@../image/arrow.png"/>
+                                    </image>
+                                </ImageView>
+                                <ImageView fx:id="BrokenLine" fitHeight="98.0" fitWidth="147.0" pickOnBounds="true"
+                                           preserveRatio="true">
+                                    <image>
+                                        <Image url="@../image/BrokenLine.png"/>
+                                    </image>
+                                </ImageView>
+                                <ImageView fx:id="DoubleBrokenLine" fitHeight="98.0" fitWidth="147.0"
+                                           pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../image/doubleBrokenLine.png"/>
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </VBox>
+                        <VBox fx:id="shapeVBox" alignment="TOP_CENTER" prefHeight="700.0" prefWidth="200.0"
+                              spacing="17.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="0.0"
+                              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="48.0">
+                            <children>
+                                <ImageView id="RoundRectangleImage" fx:id="RoundRectangle" fitHeight="98.0"
+                                           fitWidth="147.0">
+                                    <image>
+                                        <Image url="@../image/start.png"/>
+                                    </image>
+                                </ImageView>
+                                <ImageView id="RectangleImage" fx:id="Rectangle" fitHeight="98.0" fitWidth="147.0">
+                                    <image>
+                                        <Image url="@../image/process.png"/>
+                                    </image>
+                                </ImageView>
+                                <ImageView id="DecisionImage" fx:id="Decision" fitHeight="98.0" fitWidth="147.0">
+                                    <image>
+                                        <Image url="@../image/decision.png"/>
+                                    </image>
+                                </ImageView>
+                                <ImageView id="InputRectangleImage" fx:id="InputRectangle" fitHeight="98.0"
+                                           fitWidth="147.0">
+                                    <image>
+                                        <Image url="@../image/data.png"/>
+                                    </image>
+                                </ImageView>
+                                <ImageView id="CircularImage" fx:id="Circular" fitHeight="98.0" fitWidth="147.0">
+                                    <image>
+                                        <Image url="@../image/prepare.png"/>
+                                    </image>
+                                </ImageView>
+                                <ImageView id="CurvedRectangleImage" fx:id="CurvedRectangle" fitHeight="98.0"
+                                           fitWidth="147.0">
+                                    <image>
+                                        <Image url="@../image/document.png"/>
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="codeArea" prefHeight="760.0" prefWidth="200.0" AnchorPane.bottomAnchor="8.0"
+                            AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Button fx:id="codeButton" mnemonicParsing="false" prefHeight="42.0" prefWidth="200.0"
+                                text="Draw by Code"/>
+                        <TextArea fx:id="codeTextArea" layoutY="48.0" prefHeight="700.0" prefWidth="200.0"
+                                  AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="0.0"
+                                  AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="48.0"/>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </left>
+    <right>
+        <AnchorPane prefHeight="768.0" prefWidth="237.0" styleClass="attribute" stylesheets="@../css/MyCSS.css"
+                    BorderPane.alignment="CENTER">
+            <children>
+                <ImageView id="" fx:id="workingImageView" fitHeight="123.0" fitWidth="174.0" layoutX="35.0"
+                           layoutY="14.0" pickOnBounds="true" preserveRatio="true"/>
+                <VBox layoutX="18.0" layoutY="162.0" prefHeight="304.0" prefWidth="207.0">
+                    <children>
+                        <HBox prefHeight="30.0" prefWidth="207.0">
+                            <children>
+                                <Label prefHeight="30.0" prefWidth="31.0" text="X : "/>
+                                <TextField fx:id="textFieldX" prefHeight="30.0" prefWidth="174.0"/>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="5.0" prefWidth="207.0"/>
+                        <HBox prefHeight="30.0" prefWidth="207.0">
+                            <children>
+                                <Label prefHeight="30.0" prefWidth="31.0" text="Y : "/>
+                                <TextField fx:id="textFieldY" prefHeight="30.0" prefWidth="174.0"/>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="5.0" prefWidth="207.0"/>
+                        <HBox prefHeight="31.0" prefWidth="207.0">
+                            <children>
+                                <HBox prefHeight="30.0" prefWidth="207.0">
+                                    <children>
+                                        <Label prefHeight="30.0" prefWidth="31.0" text="W : "/>
+                                        <TextField fx:id="textFieldW" prefHeight="30.0" prefWidth="174.0"/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="5.0" prefWidth="207.0"/>
+                        <HBox prefHeight="30.0" prefWidth="207.0">
+                            <children>
+                                <Label prefHeight="30.0" prefWidth="31.0" text="H : "/>
+                                <TextField fx:id="textFieldH" prefHeight="30.0" prefWidth="174.0"/>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="17.0" prefWidth="207.0"/>
+                        <HBox prefHeight="36.0" prefWidth="207.0">
+                            <children>
+                                <Label prefHeight="36.0" prefWidth="85.0" text="TextColor : "/>
+                                <ColorPicker fx:id="textColor" prefHeight="36.0" prefWidth="123.0"/>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="8.0" prefWidth="207.0"/>
+                        <HBox prefHeight="36.0" prefWidth="207.0">
+                            <children>
+                                <Label prefHeight="36.0" prefWidth="85.0" text="FillColor   :"/>
+                                <ColorPicker fx:id="fillColor" prefHeight="36.0" prefWidth="123.0"/>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="8.0" prefWidth="207.0"/>
+                        <HBox prefHeight="36.0" prefWidth="207.0">
+                            <children>
+                                <Label prefHeight="36.0" prefWidth="85.0" text="TextSize   : "/>
+                                <ComboBox fx:id="textSize" prefHeight="36.0" prefWidth="123.0"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <TextArea fx:id="textArea" layoutX="28.0" layoutY="506.0" prefHeight="158.0" prefWidth="188.0"
+                          promptText="Describe your graphics"/>
+                <Button fx:id="button2" layoutX="165.0" layoutY="677.0" mnemonicParsing="false" text="修改"/>
+                <Label layoutX="21.0" layoutY="475.0" prefHeight="31.0" prefWidth="46.0" text="Text :"/>
+            </children>
+        </AnchorPane>
+    </right>
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#menuNew" styleClass="menultem" text="New"/>
+                        <MenuItem mnemonicParsing="false" onAction="#menuExport" styleClass="menultem" text="Export"/>
+                        <MenuItem mnemonicParsing="false" onAction="#menuOpen" styleClass="menultem" text="Open"/>
+                        <MenuItem mnemonicParsing="false" onAction="#menuSave" styleClass="menultem" text="Save"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Format">
+                    <items>
+                        <MenuItem fx:id="ModelMenuItem" mnemonicParsing="false" onAction="#changeModel"
+                                  styleClass="menultem" text="Code Model"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#menuAbout" styleClass="menultem" text="About"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+</BorderPane>

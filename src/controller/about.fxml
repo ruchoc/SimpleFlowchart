@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="708.0"
+      prefWidth="893.0" styleClass="aboutBackGround" stylesheets="@../css/MyCSS.css" xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <TextArea editable="false" layoutY="1.0" prefHeight="62.0" prefWidth="893.0"
+                  text="                                                       Java流程图控制程序&#10;                                                                                                                         --Version1.0">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </TextArea>
+        <Label layoutX="14.0" layoutY="79.0" prefHeight="25.0" prefWidth="778.0" text="一. 图形符号"/>
+        <Label layoutX="14.0" layoutY="104.0" prefHeight="15.0" prefWidth="778.0" text="1.基本图形符号"/>
+        <ImageView fitHeight="53.0" fitWidth="103.0" layoutX="35.0" layoutY="137.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@../image/start.png"/>
+            </image>
+        </ImageView>
+        <Label layoutX="149.0" layoutY="152.0" prefHeight="15.0" prefWidth="643.0" text="圆角矩形，起止框，表示算法的开始和结束"/>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff04" height="32.0" layoutX="38.0" layoutY="204.0"
+                   stroke="BLACK" strokeType="INSIDE" width="70.0"/>
+        <Label layoutX="149.0" layoutY="209.0" prefHeight="15.0" prefWidth="643.0" text="直角矩形，处理框，表示算法的一个步骤、一个处理环节"/>
+        <ImageView fitHeight="72.0" fitWidth="91.0" layoutX="33.0" layoutY="254.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@../image/decision.png"/>
+            </image>
+        </ImageView>
+        <Label layoutX="149.0" layoutY="272.0" prefHeight="15.0" prefWidth="643.0" text="菱形，判断框，表示算法的一个判断、条件"/>
+        <Label layoutX="146.0" layoutY="331.0" prefHeight="15.0" prefWidth="643.0" text="平行四边形，输入输出框，表示一个算法的输入或一个输出"/>
+        <ImageView fitHeight="53.0" fitWidth="75.0" layoutX="45.0" layoutY="315.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@../image/data.png"/>
+            </image>
+        </ImageView>
+        <ImageView fitHeight="56.0" fitWidth="91.0" layoutX="35.0" layoutY="368.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@../image/arrow.png"/>
+            </image>
+        </ImageView>
+        <Label layoutX="148.0" layoutY="386.0" prefHeight="15.0" prefWidth="643.0"
+               text="箭头实现，流程方向，用以连接流程图中的符号，表示算法的执行流程"/>
+        <Label layoutX="11.0" layoutY="441.0" prefHeight="15.0" prefWidth="791.0" text="2.扩展图形符号"/>
+        <ImageView fitHeight="92.0" fitWidth="103.0" layoutX="20.0" layoutY="578.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@../image/document.png"/>
+            </image>
+        </ImageView>
+        <Circle fill="#1f93ff05" layoutX="70.0" layoutY="508.0" radius="28.0" stroke="BLACK" strokeType="INSIDE"/>
+        <TextArea editable="false" layoutX="147.0" layoutY="482.0" prefHeight="53.0" prefWidth="724.0"
+                  text="小圆形，连接符号，用于当流程图过大，需要分页绘制时，在前一页绘制的一个连&#10;接符号，后一页绘制一个连接符号，表示将流程图的两个部分连接起来"/>
+        <TextArea editable="false" layoutX="147.0" layoutY="583.0" prefHeight="53.0" prefWidth="724.0"
+                  text="单边曲线矩形，说明符号，用以绘制对某个基本图形符号的说明或注释。使用虚&#10;线将说明与对应的图形符号连接起来"/>
+    </children>
+</Pane>
